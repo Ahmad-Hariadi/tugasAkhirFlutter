@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "445840120931",
+    "project_id": "employee-leave-app",
+    "storage_bucket": "employee-leave-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:445840120931:android:b1c55bb29250cc8c51ac56",
+        "android_client_info": {
+          "package_name": "com.example.tugas_akhir_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "445840120931-6geg335iv2c0csnh5afmg5t469nv6jh0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZ2Um20Nm6D9JRy4brm3F1Tnh9NqXX1sQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "445840120931-6geg335iv2c0csnh5afmg5t469nv6jh0.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "445840120931-3m4u1tlgicqe8ad7ov0ah65vkluciuqt.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.tugasAkhirFlutter"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
