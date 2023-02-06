@@ -73,14 +73,14 @@ class _DateRangeState extends State<DateRange> {
               children: [
                 Expanded(
                   child: ElevatedButton(
-                    child: Text(DateFormat('yyy/MM/dd').format(startDate)),
+                    child: Text(DateFormat('yyy/MM/dd').format(tanggalawal)),
                     onPressed: pickDateRange,
                   ),
                 ),
                 const SizedBox(width: 12),
                 Expanded(
                   child: ElevatedButton(
-                    child: Text(DateFormat('yyy/MM/dd').format(startDate)),
+                    child: Text(DateFormat('yyy/MM/dd').format(tanggalakhir)),
                     onPressed: pickDateRange,
                   ),
                 ),
@@ -108,7 +108,7 @@ class _DateRangeState extends State<DateRange> {
               decoration: InputDecoration(
                 enabled: false,
                 border: OutlineInputBorder(),
-                hintText: DateFormat('yyy/MM/dd').format(startDate),
+                hintText: DateFormat('yyyy/MM/dd').format(tanggalawal),
               ),
             ),
             SizedBox(
@@ -119,7 +119,7 @@ class _DateRangeState extends State<DateRange> {
               decoration: InputDecoration(
                 enabled: false,
                 border: OutlineInputBorder(),
-                hintText: DateFormat('yyy/MM/dd').format(endDate),
+                hintText: DateFormat('yyyy/MM/dd').format(tanggalakhir),
               ),
             ),
             SizedBox(
@@ -218,8 +218,8 @@ class _DateRangeState extends State<DateRange> {
                     // // "tanggalMulai": int.tryParse(tanggalMulai.text) ?? 0,
                     // // "tanggalAkhir": DateRange.
                     // "createDate": createdDate,
-                    "tanggalawal": tanggalawal,
-                    "tanggalakhir": tanggalakhir,
+                    "tanggalawal": tanggalawal.toString(),
+                    "tanggalakhir": tanggalakhir.toString(),
                     "keterangan": keterangan.text,
                   });
                   Navigator.push(context, MaterialPageRoute(

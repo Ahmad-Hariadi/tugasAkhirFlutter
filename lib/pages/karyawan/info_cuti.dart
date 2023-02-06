@@ -56,14 +56,19 @@ class _InfoCutiState extends State<InfoCuti> {
                         Text('Email: ' + document['email'],
                             style:
                                 TextStyle(color: Colors.white, fontSize: 15)),
-                        // Text('Awal Cuti: ' + document['tanggalawal'].toString(),
-                        //     style:
-                        //         TextStyle(color: Colors.white, fontSize: 15)),
-                        // Text(
-                        //     'Akhir Cuti: ' +
-                        //         document['tanggalakhir'].toString(),
-                        //     style:
-                        //         TextStyle(color: Colors.white, fontSize: 15)),
+                        Text('Awal Cuti: ' + document['tanggalawal'].toString(),
+                            style:
+                                TextStyle(color: Colors.white, fontSize: 15)),
+                        Text(
+                            'Akhir Cuti: ' +
+                                document['tanggalakhir'].toString(),
+                            style:
+                                TextStyle(color: Colors.white, fontSize: 15)),
+                        // Text('Akhir Cuti: ' + document['tanggalakhir'],
+                        // DateFormat.yMMMMEEEEd()
+                        //     .format(document['tanggalakhir']),
+                        // style:
+                        //     TextStyle(color: Colors.white, fontSize: 15)),
                         Text('Keterangan: ' + document['keterangan'],
                             style:
                                 TextStyle(color: Colors.white, fontSize: 15)),

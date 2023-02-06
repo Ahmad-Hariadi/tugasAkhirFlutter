@@ -431,7 +431,7 @@ class _RegisterPageState extends State<RegisterPage> {
   postDetailsToFirestore(String name, String email, String role) async {
     FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
     var users = _auth.currentUser;
-    CollectionReference ref = FirebaseFirestore.instance.collection('users');
+    CollectionReference ref = firebaseFirestore.collection('users');
     ref.doc(users!.uid).set({
       'name': nameController.text,
       'email': emailController.text,
