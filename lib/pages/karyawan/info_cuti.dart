@@ -34,11 +34,18 @@ class _InfoCutiState extends State<InfoCuti> {
               return ListView(
                   children: snapshot.data!.docs.map((document) {
                 return Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(10),
                   child: Container(
-                    color: Colors.deepPurple,
+                    decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                            colors: [Colors.black, Colors.black54],
+                            begin: FractionalOffset.topLeft,
+                            end: FractionalOffset.bottomRight),
+                        border: Border.all(color: Colors.deepPurple, width: 4),
+                        borderRadius: BorderRadius.circular(15)),
                     width: MediaQuery.of(context).size.width / 1.2,
                     height: MediaQuery.of(context).size.height / 6,
+                    padding: EdgeInsets.all(8),
                     // leading: CircleAvatar(child: Text(document['name'][0])),
                     // title: Text('Name: ' + document['name']),
                     // subtitle: Text('Email: ' + document['email']),
@@ -46,32 +53,93 @@ class _InfoCutiState extends State<InfoCuti> {
                       // mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        Row(
+                          children: [
+                            Text('Name',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 16)),
+                            SizedBox(width: 50),
+                            Text(':',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 16)),
+                            SizedBox(width: 10),
+                            Text(document['name'],
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 16))
+                          ],
+                        ),
                         SizedBox(
-                          height: 10,
+                          height: 5,
                         ),
-                        Text(
-                          'Name: ' + document['name'],
-                          style: TextStyle(color: Colors.white, fontSize: 15),
+                        Row(
+                          children: [
+                            Text('Email',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 16)),
+                            SizedBox(width: 53),
+                            Text(':',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 16)),
+                            SizedBox(width: 10),
+                            Text(document['email'],
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 16))
+                          ],
                         ),
-                        Text('Email: ' + document['email'],
-                            style:
-                                TextStyle(color: Colors.white, fontSize: 15)),
-                        Text('Awal Cuti: ' + document['tanggalawal'].toString(),
-                            style:
-                                TextStyle(color: Colors.white, fontSize: 15)),
-                        Text(
-                            'Akhir Cuti: ' +
-                                document['tanggalakhir'].toString(),
-                            style:
-                                TextStyle(color: Colors.white, fontSize: 15)),
-                        // Text('Akhir Cuti: ' + document['tanggalakhir'],
-                        // DateFormat.yMMMMEEEEd()
-                        //     .format(document['tanggalakhir']),
-                        // style:
-                        //     TextStyle(color: Colors.white, fontSize: 15)),
-                        Text('Keterangan: ' + document['keterangan'],
-                            style:
-                                TextStyle(color: Colors.white, fontSize: 15)),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Row(
+                          children: [
+                            Text('Start Date',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 16)),
+                            SizedBox(width: 21),
+                            Text(':',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 16)),
+                            SizedBox(width: 10),
+                            Text(document['tanggalawal'],
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 16))
+                          ],
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Row(
+                          children: [
+                            Text('End Date',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 16)),
+                            SizedBox(width: 29),
+                            Text(':',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 16)),
+                            SizedBox(width: 10),
+                            Text(document['tanggalakhir'],
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 16))
+                          ],
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Row(
+                          children: [
+                            Text('Description',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 16)),
+                            SizedBox(width: 12),
+                            Text(':',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 16)),
+                            SizedBox(width: 10),
+                            Text(document['keterangan'],
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 16))
+                          ],
+                        ),
                       ],
                     ),
                     // trailing: ,
