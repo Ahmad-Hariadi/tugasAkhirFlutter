@@ -63,7 +63,7 @@ class _DateRangeState extends State<DateRange> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Text(
-              'Pilih Tanggal Cuti',
+              'Select Leave Date',
               style: TextStyle(fontSize: 32),
             ),
             const SizedBox(
@@ -91,14 +91,14 @@ class _DateRangeState extends State<DateRange> {
               height: 16,
             ),
             Text(
-              'Tanggal Cuti Yang Dipilih: ${difference.inDays} hari',
+              'Selected leave date: ${difference.inDays} days',
               style: TextStyle(fontSize: 20),
             ),
             const SizedBox(
               height: 16,
             ),
             Text(
-              'Jumlah Cuti 12 hari',
+              'Total leave of 12 days',
               style: TextStyle(fontSize: 20),
             ),
             SizedBox(
@@ -175,7 +175,7 @@ class _DateRangeState extends State<DateRange> {
                     items: [
                       const DropdownMenuItem(
                           child: Text(
-                            "Status Cuti",
+                            "Leave Status",
                           ),
                           value: ""),
                       ...dropDownListData.map<DropdownMenuItem<String>>((data) {
@@ -198,7 +198,7 @@ class _DateRangeState extends State<DateRange> {
               controller: keterangan,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
-                hintText: 'Keterangan',
+                hintText: 'Description',
               ),
               maxLines: 3,
             ),

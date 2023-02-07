@@ -18,7 +18,7 @@ class _DataCutiPageState extends State<DataCutiPage> {
     CollectionReference users = firestore.collection("users");
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Data Cuti'),
+        title: const Text('Leave Data'),
         automaticallyImplyLeading: false,
         flexibleSpace: Container(
           decoration: const BoxDecoration(

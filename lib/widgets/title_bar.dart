@@ -15,13 +15,13 @@ class TitleBar extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            Icons.info_outline_rounded,
-            size: 33,
-          ),
-        ),
+        // IconButton(
+        //   onPressed: () {},
+        //   icon: const Icon(
+        //     Icons.info_outline_rounded,
+        //     size: 33,
+        //   ),
+        // ),
       ],
     );
   }

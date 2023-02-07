@@ -18,7 +18,7 @@ class _InfoCutiState extends State<InfoCuti> {
     CollectionReference users = firestore.collection("users");
     return Scaffold(
       appBar: AppBar(
-        title: Text('Info Cuti'),
+        title: Text('Leave Info'),
         // automaticallyImplyLeading: false,
         flexibleSpace: Container(
           decoration: BoxDecoration(

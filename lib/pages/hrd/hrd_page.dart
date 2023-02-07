@@ -57,7 +57,7 @@ class _HrdPageState extends State<HrdPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.book),
-            label: 'Data Cuti',
+            label: 'Leave Data',
           ),
         ],
         selectedItemColor: Colors.purpleAccent,
