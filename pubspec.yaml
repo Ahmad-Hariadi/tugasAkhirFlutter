@@ -46,6 +46,8 @@ dependencies:
   date_range_picker: ^1.0.7
   date_field: ^3.0.0
   dropdown_formfield: ^0.1.4
+  lottie: ^2.2.0
+  timelines: ^0.1.0
 
 dev_dependencies:
   flutter_test:

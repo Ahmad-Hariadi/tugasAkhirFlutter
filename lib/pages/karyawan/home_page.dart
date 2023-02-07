@@ -61,7 +61,7 @@ class _HomePageState extends State<HomePage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            "Welcome To Poltek GT",
+                            "Welcome To Lion Air Group",
                             style: TextStyle(
                                 color: Colors.black87,
                                 fontWeight: FontWeight.bold),

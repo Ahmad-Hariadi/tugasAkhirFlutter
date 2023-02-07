@@ -18,8 +18,13 @@ class ConsulatationCard extends StatelessWidget {
       width: 250,
       height: 270,
       decoration: BoxDecoration(
-          color: Colors.deepPurple,
-          borderRadius: const BorderRadius.all(Radius.circular(20))),
+          gradient: LinearGradient(
+              colors: [Colors.black, Colors.deepPurple],
+              begin: FractionalOffset.topLeft,
+              end: FractionalOffset.bottomRight),
+          border: Border.all(color: Colors.purple, width: 4),
+          borderRadius: const BorderRadius.only(
+              topRight: Radius.circular(50), bottomLeft: Radius.circular(50))),
       child: Padding(
         padding: const EdgeInsets.only(top: 24, left: 24, right: 24),
         child: Column(
@@ -29,7 +34,7 @@ class ConsulatationCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 const CircleAvatar(
-                  backgroundColor: Colors.black87,
+                  backgroundColor: Colors.white,
                   radius: 21,
                 ),
                 Column(

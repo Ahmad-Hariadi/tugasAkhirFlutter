@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:tugas_akhir_flutter/pages/hrd/home_page.dart';
 // import 'package:tugas_akhir_flutter/pages/karyawan/calendar_page.dart';
 import 'package:tugas_akhir_flutter/pages/karyawan/info_cuti.dart';
 
@@ -19,7 +20,7 @@ class _DateRangeState extends State<DateRange> {
   String dropdownvalue = list.first;
   DateTimeRange dateRange = DateTimeRange(
     start: DateTime.now(),
-    end: DateTime(2023, 02, 17),
+    end: DateTime.now(),
   );
 
   List dropDownListData = [
@@ -78,12 +79,12 @@ class _DateRangeState extends State<DateRange> {
                   ),
                 ),
                 const SizedBox(width: 12),
-                Expanded(
-                  child: ElevatedButton(
-                    child: Text(DateFormat('yyy/MM/dd').format(tanggalakhir)),
-                    onPressed: pickDateRange,
-                  ),
-                ),
+                // Expanded(
+                //   child: ElevatedButton(
+                //     child: Text(DateFormat('yyy/MM/dd').format(tanggalakhir)),
+                //     onPressed: pickDateRange,
+                //   ),
+                // ),
               ],
             ),
             const SizedBox(
@@ -225,6 +226,7 @@ class _DateRangeState extends State<DateRange> {
                   Navigator.push(context, MaterialPageRoute(
                     builder: (context) {
                       return InfoCuti();
+                      // InfoCuti();
                     },
                   ));
                 },
@@ -245,9 +247,40 @@ class _DateRangeState extends State<DateRange> {
       firstDate: DateTime(1900),
       lastDate: DateTime(2100),
     );
-    if (newDateRange == null) return;
-    setState(
-      () => dateRange = newDateRange,
-    );
+    if (newDateRange == null) {
+      return;
+    } else {
+      if (newDateRange.duration.inDays > 12) {
+        return showDialog<void>(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: const Text('Sorry'),
+              content: const Text(
+                  'Maaf untuk batas cuti hanya dapat di lakukan maksimal 12 hari'),
+              actions: <Widget>[
+                TextButton(
+                  style: TextButton.styleFrom(
+                    textStyle: Theme.of(context).textTheme.labelLarge,
+                  ),
+                  child: const Text('Oke'),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
+              ],
+            );
+          },
+        );
+      } else {
+        // if () {
+
+        // }
+        // else {}
+        setState(
+          () => dateRange = newDateRange,
+        );
+      }
+    }
   }
 }

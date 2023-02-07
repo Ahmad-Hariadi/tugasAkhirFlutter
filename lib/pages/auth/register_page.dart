@@ -438,6 +438,8 @@ class _RegisterPageState extends State<RegisterPage> {
       'role': role,
       'tanggalawal': DateTime.now(),
       'tanggalakhir': DateTime.now(),
+      'keterangan': (""),
+      'status': (""),
     });
     Navigator.pushReplacement(
         context, MaterialPageRoute(builder: (context) => LoginPage()));

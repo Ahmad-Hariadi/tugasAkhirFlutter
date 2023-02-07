@@ -11,6 +11,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final users = FirebaseAuth.instance.currentUser!;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,7 +44,7 @@ class _HomePageState extends State<HomePage> {
             Column(
               children: [
                 Text(
-                  'Selamat Datang',
+                  'Welcome',
                   style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                 ),
                 Text(
@@ -77,7 +78,7 @@ class _HomePageState extends State<HomePage> {
                       fontSize: 20),
                 ),
                 Text(
-                  'hrd40041@gmail.com',
+                  users.email!,
                   style: TextStyle(
                     color: Colors.deepPurple,
                     fontWeight: FontWeight.bold,
@@ -104,7 +105,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                         SizedBox(width: 15),
                         Text(
-                          'Pengajuan Cuti : ',
+                          'Employee Leave : ',
                           style: TextStyle(
                               color: Colors.deepPurple,
                               fontWeight: FontWeight.bold,
@@ -151,7 +152,7 @@ class _HomePageState extends State<HomePage> {
                         },
                         child: Center(
                           child: Text(
-                            'Lihat Pengajuan Cuti',
+                            'List Employee Leave',
                             style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.w600,
