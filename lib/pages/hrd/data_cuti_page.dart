@@ -17,6 +17,7 @@ class _DataCutiPageState extends State<DataCutiPage> {
     FirebaseFirestore firestore = FirebaseFirestore.instance;
     CollectionReference users = firestore.collection("users");
     return Scaffold(
+      backgroundColor: Color(0xFF363567),
       appBar: AppBar(
         title: const Text('Leave Data'),
         automaticallyImplyLeading: false,

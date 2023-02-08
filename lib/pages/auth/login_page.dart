@@ -362,8 +362,7 @@ class _LoginPageState extends State<LoginPage> {
   void signIn(String email, String password) async {
     if (_formkey.currentState!.validate()) {
       try {
-        UserCredential userCredential =
-            await FirebaseAuth.instance.signInWithEmailAndPassword(
+        await FirebaseAuth.instance.signInWithEmailAndPassword(
           email: email,
           password: password,
         );

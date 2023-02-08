@@ -17,6 +17,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFF363567),
       appBar: AppBar(
         title: const Text('Home'),
         automaticallyImplyLeading: false,
@@ -47,35 +48,42 @@ class _HomePageState extends State<HomePage> {
               children: [
                 Text(
                   'Welcome',
-                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
                 ),
                 SizedBox(
-                  height: 25,
+                  height: 40,
                 ),
                 ClipOval(
                   child: Container(
-                      color: Colors.grey,
-                      width: 100,
-                      height: 100,
+                      color: Colors.blueGrey[100],
+                      width: 120,
+                      height: 120,
                       child: Icon(
                         Icons.person,
-                        size: 80,
+                        size: 85,
                       )),
                 ),
                 SizedBox(
-                  height: 25,
+                  height: 40,
                 ),
                 Text(
                   'Employee of Lion Air Group',
                   style: TextStyle(
                       // color: Colors.deepPurple,
                       fontWeight: FontWeight.bold,
+                      color: Colors.white,
                       fontSize: 20),
+                ),
+                SizedBox(
+                  height: 8,
                 ),
                 Text(
                   users.email!,
                   style: TextStyle(
-                    color: Colors.deepPurple,
+                    color: Colors.blueGrey[200],
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -87,7 +95,8 @@ class _HomePageState extends State<HomePage> {
                   padding: const EdgeInsets.only(left: 20, right: 20),
                   child: Container(
                     decoration: BoxDecoration(
-                        border: Border.all(color: Colors.deepPurple, width: 3),
+                        color: Colors.blueGrey[600],
+                        border: Border.all(color: Colors.white, width: 3),
                         borderRadius: BorderRadius.circular(10)),
                     width: MediaQuery.of(context).size.width * 0.7,
                     height: 40,
@@ -96,20 +105,20 @@ class _HomePageState extends State<HomePage> {
                       children: [
                         Icon(
                           Icons.notifications,
-                          color: Colors.deepPurple,
+                          color: Colors.white,
                         ),
                         SizedBox(width: 15),
                         Text(
                           'Current Total Leave : ',
                           style: TextStyle(
-                              color: Colors.deepPurple,
+                              color: Colors.white,
                               fontWeight: FontWeight.bold,
                               fontSize: 15),
                         ),
                         Text(
                           '12',
                           style: TextStyle(
-                              color: Colors.deepPurple,
+                              color: Colors.white,
                               fontWeight: FontWeight.bold,
                               fontSize: 15),
                         ),
@@ -125,6 +134,7 @@ class _HomePageState extends State<HomePage> {
                     width: MediaQuery.of(context).size.width * 0.6,
                     height: 40,
                     decoration: BoxDecoration(
+                        border: Border.all(color: Colors.white, width: 1),
                         borderRadius: BorderRadius.circular(20),
                         gradient: LinearGradient(
                             colors: [

@@ -17,6 +17,7 @@ class _InfoCutiState extends State<InfoCuti> {
     FirebaseFirestore firestore = FirebaseFirestore.instance;
     CollectionReference users = firestore.collection("users");
     return Scaffold(
+      backgroundColor: Color(0xFF363567),
       appBar: AppBar(
         title: Text('Leave Info'),
         // automaticallyImplyLeading: false,
@@ -35,18 +36,21 @@ class _InfoCutiState extends State<InfoCuti> {
             if (snapshot.hasData) {
               DocumentSnapshot data = snapshot.data!;
               return Padding(
-                padding: const EdgeInsets.all(10),
+                padding: const EdgeInsets.all(15),
                 child: Container(
                   decoration: BoxDecoration(
                       gradient: LinearGradient(
                           colors: [Colors.black, Colors.black54],
                           begin: FractionalOffset.topLeft,
                           end: FractionalOffset.bottomRight),
-                      border: Border.all(color: Colors.deepPurple, width: 4),
-                      borderRadius: BorderRadius.circular(15)),
+                      border:
+                          Border.all(color: Colors.deepPurpleAccent, width: 4),
+                      borderRadius: const BorderRadius.only(
+                          topRight: Radius.circular(50),
+                          bottomLeft: Radius.circular(50))),
                   width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height / 6,
-                  padding: EdgeInsets.all(8),
+                  height: MediaQuery.of(context).size.height / 5,
+                  padding: EdgeInsets.all(10),
                   child: Column(
                     // mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -134,6 +138,24 @@ class _InfoCutiState extends State<InfoCuti> {
                                   TextStyle(color: Colors.white, fontSize: 16)),
                           SizedBox(width: 10),
                           Text(data['keterangan'],
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 16))
+                        ],
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Row(
+                        children: [
+                          Text('Status',
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 16)),
+                          SizedBox(width: 47),
+                          Text(':',
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 16)),
+                          SizedBox(width: 10),
+                          Text(data['status'],
                               style:
                                   TextStyle(color: Colors.white, fontSize: 16))
                         ],

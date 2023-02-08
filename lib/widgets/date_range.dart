@@ -56,7 +56,18 @@ class _DateRangeState extends State<DateRange> {
     // FirebaseFirestore firestore = FirebaseFirestore.instance;
     // CollectionReference addData = firestore.collection('addData');
     return Scaffold(
-      appBar: AppBar(),
+      backgroundColor: Color(0xFF363567),
+      appBar: AppBar(
+        // automaticallyImplyLeading: false,
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+                colors: [Colors.black, Colors.deepPurple],
+                begin: FractionalOffset.topLeft,
+                end: FractionalOffset.bottomRight),
+          ),
+        ),
+      ),
       body: Container(
         padding: EdgeInsets.all(16),
         child: Column(
@@ -64,7 +75,7 @@ class _DateRangeState extends State<DateRange> {
           children: [
             Text(
               'Select Leave Date',
-              style: TextStyle(fontSize: 32),
+              style: TextStyle(fontSize: 32, color: Colors.white),
             ),
             const SizedBox(
               height: 16,
@@ -92,14 +103,14 @@ class _DateRangeState extends State<DateRange> {
             ),
             Text(
               'Selected leave date: ${difference.inDays} days',
-              style: TextStyle(fontSize: 20),
+              style: TextStyle(fontSize: 20, color: Colors.white),
             ),
             const SizedBox(
               height: 16,
             ),
             Text(
               'Total leave of 12 days',
-              style: TextStyle(fontSize: 20),
+              style: TextStyle(fontSize: 20, color: Colors.white),
             ),
             SizedBox(
               height: 20,
@@ -107,10 +118,12 @@ class _DateRangeState extends State<DateRange> {
             TextFormField(
               controller: dateform,
               decoration: InputDecoration(
-                enabled: false,
-                border: OutlineInputBorder(),
-                hintText: DateFormat('yyyy/MM/dd').format(tanggalawal),
-              ),
+                  enabled: true,
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20)),
+                  hintText: DateFormat('yyyy/MM/dd').format(tanggalawal),
+                  filled: true,
+                  fillColor: Colors.white),
             ),
             SizedBox(
               height: 20,
@@ -118,10 +131,12 @@ class _DateRangeState extends State<DateRange> {
             TextFormField(
               controller: dateto,
               decoration: InputDecoration(
-                enabled: false,
-                border: OutlineInputBorder(),
-                hintText: DateFormat('yyyy/MM/dd').format(tanggalakhir),
-              ),
+                  enabled: true,
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20)),
+                  hintText: DateFormat('yyyy/MM/dd').format(tanggalakhir),
+                  filled: true,
+                  fillColor: Colors.white),
             ),
             SizedBox(
               height: 20,
@@ -162,10 +177,11 @@ class _DateRangeState extends State<DateRange> {
             // ),
             InputDecorator(
               decoration: InputDecoration(
-                border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(15.0)),
-                contentPadding: const EdgeInsets.all(10),
-              ),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20)),
+                  contentPadding: const EdgeInsets.all(10),
+                  filled: true,
+                  fillColor: Colors.white),
               child: DropdownButtonHideUnderline(
                 child: DropdownButton<String>(
                     isDense: true,
@@ -197,10 +213,11 @@ class _DateRangeState extends State<DateRange> {
             TextFormField(
               controller: keterangan,
               decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                hintText: 'Description',
-              ),
-              maxLines: 3,
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20)),
+                  hintText: 'Description',
+                  filled: true,
+                  fillColor: Colors.white),
             ),
             SizedBox(
               height: 25,
