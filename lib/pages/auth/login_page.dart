@@ -155,13 +155,6 @@ class _LoginPageState extends State<LoginPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            // TextButton(
-                            //   onPressed: () {},
-                            //   child: Text(
-                            //     'Forgot Password?',
-                            //     style: TextStyle(color: Colors.grey[200]),
-                            //   ),
-                            // ),
                             GestureDetector(
                               onTap: () => Navigator.push(
                                   context,

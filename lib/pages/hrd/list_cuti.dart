@@ -2,8 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-// ignore_for_file: camel_case_types, prefer_typing_uninitialized_variables
-
 class ListCuti extends StatefulWidget {
   const ListCuti({Key? key}) : super(key: key);
 
@@ -59,9 +57,6 @@ class _ListCutiState extends State<ListCuti> {
                         width: MediaQuery.of(context).size.width,
                         height: MediaQuery.of(context).size.height / 4.0,
                         padding: EdgeInsets.all(8),
-                        // leading: CircleAvatar(child: Text(document['name'][0])),
-                        // title: Text('Name: ' + document['name']),
-                        // subtitle: Text('Email: ' + document['email']),
                         child: Column(
                           // mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -71,7 +66,7 @@ class _ListCutiState extends State<ListCuti> {
                                 Text('Name',
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 16)),
-                                SizedBox(width: 50),
+                                SizedBox(width: 55),
                                 Text(':',
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 16)),
@@ -89,7 +84,7 @@ class _ListCutiState extends State<ListCuti> {
                                 Text('Email',
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 16)),
-                                SizedBox(width: 53),
+                                SizedBox(width: 58),
                                 Text(':',
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 16)),
@@ -107,7 +102,7 @@ class _ListCutiState extends State<ListCuti> {
                                 Text('Start Date',
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 16)),
-                                SizedBox(width: 21),
+                                SizedBox(width: 23),
                                 Text(':',
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 16)),
@@ -125,7 +120,7 @@ class _ListCutiState extends State<ListCuti> {
                                 Text('End Date',
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 16)),
-                                SizedBox(width: 29),
+                                SizedBox(width: 31),
                                 Text(':',
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 16)),
@@ -213,170 +208,6 @@ class _ListCutiState extends State<ListCuti> {
                   }
                 },
               );
-              // return ListView(
-              //     children: snapshot.data!.docs.map((data) {
-              //   if (data['role']! == 'Karyawan') {
-              //   } else {
-              //     return Container();
-              //   }
-              //   return Padding(
-              //     padding: const EdgeInsets.all(15),
-              //     child: Container(
-              //       decoration: BoxDecoration(
-              //           gradient: LinearGradient(
-              //               colors: [Colors.black, Colors.black54],
-              //               begin: FractionalOffset.topLeft,
-              //               end: FractionalOffset.bottomRight),
-              //           border: Border.all(
-              //               color: Colors.deepPurpleAccent, width: 4),
-              //           borderRadius: const BorderRadius.only(
-              //               topRight: Radius.circular(50),
-              //               bottomLeft: Radius.circular(50))),
-              //       width: MediaQuery.of(context).size.width,
-              //       height: MediaQuery.of(context).size.height / 4.0,
-              //       padding: EdgeInsets.all(8),
-              //       // leading: CircleAvatar(child: Text(document['name'][0])),
-              //       // title: Text('Name: ' + document['name']),
-              //       // subtitle: Text('Email: ' + document['email']),
-              //       child: Column(
-              //         // mainAxisAlignment: MainAxisAlignment.start,
-              //         crossAxisAlignment: CrossAxisAlignment.start,
-              //         children: [
-              //           Row(
-              //             children: [
-              //               Text('Name',
-              //                   style: TextStyle(
-              //                       color: Colors.white, fontSize: 16)),
-              //               SizedBox(width: 50),
-              //               Text(':',
-              //                   style: TextStyle(
-              //                       color: Colors.white, fontSize: 16)),
-              //               SizedBox(width: 10),
-              //               Text(document['name'],
-              //                   style: TextStyle(
-              //                       color: Colors.white, fontSize: 16))
-              //             ],
-              //           ),
-              //           SizedBox(
-              //             height: 5,
-              //           ),
-              //           Row(
-              //             children: [
-              //               Text('Email',
-              //                   style: TextStyle(
-              //                       color: Colors.white, fontSize: 16)),
-              //               SizedBox(width: 53),
-              //               Text(':',
-              //                   style: TextStyle(
-              //                       color: Colors.white, fontSize: 16)),
-              //               SizedBox(width: 10),
-              //               Text(document['email'],
-              //                   style: TextStyle(
-              //                       color: Colors.white, fontSize: 16))
-              //             ],
-              //           ),
-              //           SizedBox(
-              //             height: 5,
-              //           ),
-              //           Row(
-              //             children: [
-              //               Text('Start Date',
-              //                   style: TextStyle(
-              //                       color: Colors.white, fontSize: 16)),
-              //               SizedBox(width: 21),
-              //               Text(':',
-              //                   style: TextStyle(
-              //                       color: Colors.white, fontSize: 16)),
-              //               SizedBox(width: 10),
-              //               Text(document['tanggalawal'].toString(),
-              //                   style: TextStyle(
-              //                       color: Colors.white, fontSize: 16))
-              //             ],
-              //           ),
-              //           SizedBox(
-              //             height: 5,
-              //           ),
-              //           Row(
-              //             children: [
-              //               Text('End Date',
-              //                   style: TextStyle(
-              //                       color: Colors.white, fontSize: 16)),
-              //               SizedBox(width: 29),
-              //               Text(':',
-              //                   style: TextStyle(
-              //                       color: Colors.white, fontSize: 16)),
-              //               SizedBox(width: 10),
-              //               Text(document['tanggalakhir'].toString(),
-              //                   style: TextStyle(
-              //                       color: Colors.white, fontSize: 16))
-              //             ],
-              //           ),
-              //           SizedBox(
-              //             height: 5,
-              //           ),
-              //           Row(
-              //             children: [
-              //               Text('Description',
-              //                   style: TextStyle(
-              //                       color: Colors.white, fontSize: 16)),
-              //               SizedBox(width: 12),
-              //               Text(':',
-              //                   style: TextStyle(
-              //                       color: Colors.white, fontSize: 16)),
-              //               SizedBox(width: 10),
-              //               Text(document['keterangan'],
-              //                   style: TextStyle(
-              //                       color: Colors.white, fontSize: 16))
-              //             ],
-              //           ),
-              //           SizedBox(
-              //             height: 15,
-              //           ),
-              //           Row(
-              //             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              //             children: [
-              //               SizedBox(
-              //                 width: 100,
-              //                 height: 40,
-              //                 child: ElevatedButton(
-              //                   onPressed: () {},
-              //                   child: Text(
-              //                     'Approve',
-              //                     style: TextStyle(
-              //                         color: Colors.white, fontSize: 12),
-              //                   ),
-              //                   style: ButtonStyle(
-              //                     backgroundColor:
-              //                         MaterialStateProperty.all<Color>(
-              //                             Colors.green),
-              //                   ),
-              //                 ),
-              //               ),
-              //               SizedBox(
-              //                 width: 100,
-              //                 height: 40,
-              //                 child: new ElevatedButton(
-              //                   onPressed: () {},
-              //                   child: Text(
-              //                     'Reject',
-              //                     style: TextStyle(
-              //                         color: Colors.white, fontSize: 12),
-              //                   ),
-              //                   style: ButtonStyle(
-              //                     backgroundColor:
-              //                         MaterialStateProperty.all<Color>(
-              //                             Colors.red),
-              //                   ),
-              //                 ),
-              //               )
-              //             ],
-              //           ),
-              //         ],
-              //       ),
-              //       // trailing: ,
-              //     ),
-              //   );
-              // }).toList());
             } else {
               return Text('Loading..');
             }

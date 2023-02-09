@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:tugas_akhir_flutter/pages/karyawan/home_page.dart';
 import 'package:tugas_akhir_flutter/pages/karyawan/calendar_page.dart';
 import 'package:tugas_akhir_flutter/pages/karyawan/info_cuti.dart';
-// import 'package:tugas_akhir_flutter/pages/karyawan/profil_page.dart';
 
 class KaryawanPage extends StatefulWidget {
   const KaryawanPage({super.key});
@@ -25,7 +24,6 @@ class _KaryawanPageState extends State<KaryawanPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Colors.white,
       body: PageView(
         onPageChanged: (index) {
           setState(() {
@@ -37,7 +35,6 @@ class _KaryawanPageState extends State<KaryawanPage> {
           HomePage(),
           InfoCuti(),
           CalendarPage(),
-          // ProfilPage(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -67,10 +64,6 @@ class _KaryawanPageState extends State<KaryawanPage> {
             icon: Icon(Icons.calendar_month),
             label: 'Calendar',
           ),
-          // BottomNavigationBarItem(
-          //   icon: Icon(Icons.person),
-          //   label: 'Profil',
-          // ),
         ],
         selectedItemColor: Colors.purpleAccent,
       ),

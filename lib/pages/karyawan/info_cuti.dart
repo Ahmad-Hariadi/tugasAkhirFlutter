@@ -35,6 +35,17 @@ class _InfoCutiState extends State<InfoCuti> {
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               DocumentSnapshot data = snapshot.data!;
+
+              String date = data['tanggalakhir'];
+              String dateNow = DateTime.now().toString();
+
+              print(date.split(" ")[0]);
+              print(dateNow.split(" ")[0]);
+
+              if (date.split(" ")[0] == dateNow.split(" ")[0]) {
+                users.doc(user.uid).update({"status": "Pending"});
+              }
+
               return Padding(
                 padding: const EdgeInsets.all(15),
                 child: Container(
@@ -46,8 +57,8 @@ class _InfoCutiState extends State<InfoCuti> {
                       border:
                           Border.all(color: Colors.deepPurpleAccent, width: 4),
                       borderRadius: const BorderRadius.only(
-                          topRight: Radius.circular(50),
-                          bottomLeft: Radius.circular(50))),
+                          topRight: Radius.circular(35),
+                          bottomLeft: Radius.circular(35))),
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height / 5,
                   padding: EdgeInsets.all(10),
@@ -60,7 +71,7 @@ class _InfoCutiState extends State<InfoCuti> {
                           Text('Name',
                               style:
                                   TextStyle(color: Colors.white, fontSize: 16)),
-                          SizedBox(width: 50),
+                          SizedBox(width: 55),
                           Text(':',
                               style:
                                   TextStyle(color: Colors.white, fontSize: 16)),
@@ -78,7 +89,7 @@ class _InfoCutiState extends State<InfoCuti> {
                           Text('Email',
                               style:
                                   TextStyle(color: Colors.white, fontSize: 16)),
-                          SizedBox(width: 53),
+                          SizedBox(width: 58),
                           Text(':',
                               style:
                                   TextStyle(color: Colors.white, fontSize: 16)),
@@ -96,7 +107,7 @@ class _InfoCutiState extends State<InfoCuti> {
                           Text('Start Date',
                               style:
                                   TextStyle(color: Colors.white, fontSize: 16)),
-                          SizedBox(width: 21),
+                          SizedBox(width: 23),
                           Text(':',
                               style:
                                   TextStyle(color: Colors.white, fontSize: 16)),
@@ -114,7 +125,7 @@ class _InfoCutiState extends State<InfoCuti> {
                           Text('End Date',
                               style:
                                   TextStyle(color: Colors.white, fontSize: 16)),
-                          SizedBox(width: 29),
+                          SizedBox(width: 31),
                           Text(':',
                               style:
                                   TextStyle(color: Colors.white, fontSize: 16)),
@@ -150,14 +161,19 @@ class _InfoCutiState extends State<InfoCuti> {
                           Text('Status',
                               style:
                                   TextStyle(color: Colors.white, fontSize: 16)),
-                          SizedBox(width: 47),
+                          SizedBox(width: 51),
                           Text(':',
                               style:
                                   TextStyle(color: Colors.white, fontSize: 16)),
                           SizedBox(width: 10),
                           Text(data['status'],
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 16))
+                              style: TextStyle(
+                                  color: data['status'] == 'Approved'
+                                      ? Colors.green
+                                      : data['status'] == 'Rejected'
+                                          ? Colors.red
+                                          : Colors.amber,
+                                  fontSize: 16))
                         ],
                       ),
                     ],
@@ -169,86 +185,6 @@ class _InfoCutiState extends State<InfoCuti> {
               return Center(child: CircularProgressIndicator());
             }
           }),
-      //     StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
-      //   stream: FirebaseFirestore.instance.collection('users').snapshots(),
-      //   builder: (_, snapshot) {
-      //     if (snapshot.hasError) return Text('Error = ${snapshot.error}');
-
-      //     if (snapshot.hasData) {
-      //       final docs = snapshot.data!.docs;
-      //       return ListView.builder(
-      //         itemCount: docs.length,
-      //         itemBuilder: (_, i) {
-      //           final data = docs[i].data();
-      //           return ListTile(
-      //             title: Text(data['name']),
-      //           );
-      //         },
-      //       );
-      //     }
-
-      //     return Center(child: CircularProgressIndicator());
-      //   },
-      // )
-      // StreamBuilder<QuerySnapshot>(
-      //     stream: users.snapshots(),
-      //     builder: (_, snapshot) {
-      //       if (snapshot.hasData) {
-      //         return ListView(
-      //             children:
-      //                 snapshot.data!.docs.map((QueryDocumentSnapshot document) {
-      //           return Padding(
-      //             padding: const EdgeInsets.all(8.0),
-      //             child: Container(
-      //               color: Colors.blueGrey,
-      //               width: MediaQuery.of(context).size.width / 1.2,
-      //               height: MediaQuery.of(context).size.height / 6,
-      //               // leading: CircleAvatar(child: Text(document['name'][0])),
-      //               // title: Text('Name: ' + document['name']),
-      //               // subtitle: Text('Email: ' + document['email']),
-      //               child: Column(
-      //                 // mainAxisAlignment: MainAxisAlignment.start,
-      //                 crossAxisAlignment: CrossAxisAlignment.start,
-      //                 children: [
-      //                   SizedBox(
-      //                     height: 10,
-      //                   ),
-      //                   Text(
-      //                     'Name: ' + document['name'],
-      //                     style: TextStyle(color: Colors.white, fontSize: 15),
-      //                   ),
-      //                   Text('Email: ' + document['email'],
-      //                       style:
-      //                           TextStyle(color: Colors.white, fontSize: 15)),
-      //                   // Text('Awal Cuti: ' + document['tanggalawal'].toString(),
-      //                   //     style:
-      //                   //         TextStyle(color: Colors.white, fontSize: 15)),
-      //                   // Text(
-      //                   //     'Akhir Cuti: ' +
-      //                   //         document['tanggalakhir'].toString(),
-      //                   //     style:
-      //                   //         TextStyle(color: Colors.white, fontSize: 15)),
-      //                   // Text('Awal Cuti: ' + document['tanggalawal'].toString(),
-      //                   //     style:
-      //                   //         TextStyle(color: Colors.white, fontSize: 15)),
-      //                   // Text(
-      //                   //     'Akhir Cuti: ' +
-      //                   //         document['tanggalakhir'].toString(),
-      //                   //     style:
-      //                   //         TextStyle(color: Colors.white, fontSize: 15)),
-      //                   Text('Keterangan: ' + document['keterangan'],
-      //                       style:
-      //                           TextStyle(color: Colors.white, fontSize: 15)),
-      //                 ],
-      //               ),
-      //               // trailing: ,
-      //             ),
-      //           );
-      //         }).toList());
-      //       } else {
-      //         return Text('Loading..');
-      //       }
-      //     }),
     );
   }
 }
