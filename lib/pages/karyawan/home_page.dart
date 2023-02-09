@@ -67,6 +67,7 @@ class _HomePageState extends State<HomePage> {
                           data['name'],
                           style: TextStyle(
                               color: Colors.blueGrey[200],
+                              // color: Colors.purpleAccent,
                               fontWeight: FontWeight.bold,
                               fontSize: 18),
                         ),
@@ -101,6 +102,7 @@ class _HomePageState extends State<HomePage> {
                           data['email'],
                           style: TextStyle(
                             color: Colors.blueGrey[200],
+                            // color: Colors.purpleAccent,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -112,7 +114,8 @@ class _HomePageState extends State<HomePage> {
                           padding: const EdgeInsets.only(left: 20, right: 20),
                           child: Container(
                             decoration: BoxDecoration(
-                                color: Colors.blueGrey[600],
+                                // color: Colors.blueGrey[600],
+                                color: Colors.black38,
                                 border:
                                     Border.all(color: Colors.white, width: 3),
                                 borderRadius: BorderRadius.circular(10)),
@@ -144,7 +147,7 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                         ),
-                        SizedBox(height: 10),
+                        SizedBox(height: 15),
                         Material(
                           borderRadius: BorderRadius.circular(20),
                           elevation: 2,
@@ -153,7 +156,7 @@ class _HomePageState extends State<HomePage> {
                             height: 40,
                             decoration: BoxDecoration(
                                 border:
-                                    Border.all(color: Colors.white, width: 1),
+                                    Border.all(color: Colors.grey, width: 1),
                                 borderRadius: BorderRadius.circular(20),
                                 gradient: LinearGradient(
                                     colors: [
