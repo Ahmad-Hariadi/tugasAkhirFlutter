@@ -50,7 +50,7 @@ class _DataCutiPageState extends State<DataCutiPage> {
                                 topRight: Radius.circular(35),
                                 bottomLeft: Radius.circular(35))),
                         width: MediaQuery.of(context).size.width,
-                        height: MediaQuery.of(context).size.height / 4.9,
+                        height: MediaQuery.of(context).size.height / 4.3,
                         padding: EdgeInsets.all(8),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -60,7 +60,7 @@ class _DataCutiPageState extends State<DataCutiPage> {
                                 Text('Name',
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 16)),
-                                SizedBox(width: 55),
+                                SizedBox(width: 80),
                                 Text(':',
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 16)),
@@ -78,7 +78,7 @@ class _DataCutiPageState extends State<DataCutiPage> {
                                 Text('Email',
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 16)),
-                                SizedBox(width: 58),
+                                SizedBox(width: 83),
                                 Text(':',
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 16)),
@@ -96,7 +96,7 @@ class _DataCutiPageState extends State<DataCutiPage> {
                                 Text('Start Date',
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 16)),
-                                SizedBox(width: 23),
+                                SizedBox(width: 48),
                                 Text(':',
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 16)),
@@ -114,7 +114,7 @@ class _DataCutiPageState extends State<DataCutiPage> {
                                 Text('End Date',
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 16)),
-                                SizedBox(width: 31),
+                                SizedBox(width: 56),
                                 Text(':',
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 16)),
@@ -132,7 +132,7 @@ class _DataCutiPageState extends State<DataCutiPage> {
                                 Text('Available Leave',
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 16)),
-                                SizedBox(width: 20),
+                                SizedBox(width: 6),
                                 Text(':',
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 16)),
@@ -150,7 +150,7 @@ class _DataCutiPageState extends State<DataCutiPage> {
                                 Text('Description',
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 16)),
-                                SizedBox(width: 12),
+                                SizedBox(width: 37),
                                 Text(':',
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 16)),
@@ -168,7 +168,7 @@ class _DataCutiPageState extends State<DataCutiPage> {
                                 Text('Status',
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 16)),
-                                SizedBox(width: 51),
+                                SizedBox(width: 76),
                                 Text(':',
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 16)),

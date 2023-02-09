@@ -61,7 +61,7 @@ class _HomePageState extends State<HomePage> {
                               color: Colors.white),
                         ),
                         SizedBox(
-                          height: 8,
+                          height: 5,
                         ),
                         Text(
                           data['name'],
@@ -95,7 +95,7 @@ class _HomePageState extends State<HomePage> {
                               fontSize: 20),
                         ),
                         SizedBox(
-                          height: 8,
+                          height: 5,
                         ),
                         Text(
                           data['email'],

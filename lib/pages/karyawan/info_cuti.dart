@@ -60,7 +60,7 @@ class _InfoCutiState extends State<InfoCuti> {
                           topRight: Radius.circular(35),
                           bottomLeft: Radius.circular(35))),
                   width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height / 5,
+                  height: MediaQuery.of(context).size.height / 4.3,
                   padding: EdgeInsets.all(10),
                   child: Column(
                     // mainAxisAlignment: MainAxisAlignment.start,
@@ -71,7 +71,7 @@ class _InfoCutiState extends State<InfoCuti> {
                           Text('Name',
                               style:
                                   TextStyle(color: Colors.white, fontSize: 16)),
-                          SizedBox(width: 55),
+                          SizedBox(width: 80),
                           Text(':',
                               style:
                                   TextStyle(color: Colors.white, fontSize: 16)),
@@ -89,7 +89,7 @@ class _InfoCutiState extends State<InfoCuti> {
                           Text('Email',
                               style:
                                   TextStyle(color: Colors.white, fontSize: 16)),
-                          SizedBox(width: 58),
+                          SizedBox(width: 83),
                           Text(':',
                               style:
                                   TextStyle(color: Colors.white, fontSize: 16)),
@@ -107,7 +107,7 @@ class _InfoCutiState extends State<InfoCuti> {
                           Text('Start Date',
                               style:
                                   TextStyle(color: Colors.white, fontSize: 16)),
-                          SizedBox(width: 23),
+                          SizedBox(width: 48),
                           Text(':',
                               style:
                                   TextStyle(color: Colors.white, fontSize: 16)),
@@ -125,7 +125,7 @@ class _InfoCutiState extends State<InfoCuti> {
                           Text('End Date',
                               style:
                                   TextStyle(color: Colors.white, fontSize: 16)),
-                          SizedBox(width: 31),
+                          SizedBox(width: 56),
                           Text(':',
                               style:
                                   TextStyle(color: Colors.white, fontSize: 16)),
@@ -140,10 +140,28 @@ class _InfoCutiState extends State<InfoCuti> {
                       ),
                       Row(
                         children: [
+                          Text('Available Leave',
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 16)),
+                          SizedBox(width: 6),
+                          Text(':',
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 16)),
+                          SizedBox(width: 10),
+                          Text('${data['maxCuti'].toString()} days',
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 16))
+                        ],
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Row(
+                        children: [
                           Text('Description',
                               style:
                                   TextStyle(color: Colors.white, fontSize: 16)),
-                          SizedBox(width: 12),
+                          SizedBox(width: 37),
                           Text(':',
                               style:
                                   TextStyle(color: Colors.white, fontSize: 16)),
@@ -161,7 +179,7 @@ class _InfoCutiState extends State<InfoCuti> {
                           Text('Status',
                               style:
                                   TextStyle(color: Colors.white, fontSize: 16)),
-                          SizedBox(width: 51),
+                          SizedBox(width: 76),
                           Text(':',
                               style:
                                   TextStyle(color: Colors.white, fontSize: 16)),

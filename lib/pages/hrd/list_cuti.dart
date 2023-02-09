@@ -55,7 +55,7 @@ class _ListCutiState extends State<ListCuti> {
                                 topRight: Radius.circular(50),
                                 bottomLeft: Radius.circular(50))),
                         width: MediaQuery.of(context).size.width,
-                        height: MediaQuery.of(context).size.height / 4.0,
+                        height: MediaQuery.of(context).size.height / 3.7,
                         padding: EdgeInsets.all(8),
                         child: Column(
                           // mainAxisAlignment: MainAxisAlignment.start,
@@ -66,7 +66,7 @@ class _ListCutiState extends State<ListCuti> {
                                 Text('Name',
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 16)),
-                                SizedBox(width: 55),
+                                SizedBox(width: 80),
                                 Text(':',
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 16)),
@@ -84,7 +84,7 @@ class _ListCutiState extends State<ListCuti> {
                                 Text('Email',
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 16)),
-                                SizedBox(width: 58),
+                                SizedBox(width: 83),
                                 Text(':',
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 16)),
@@ -102,7 +102,7 @@ class _ListCutiState extends State<ListCuti> {
                                 Text('Start Date',
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 16)),
-                                SizedBox(width: 23),
+                                SizedBox(width: 48),
                                 Text(':',
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 16)),
@@ -120,7 +120,7 @@ class _ListCutiState extends State<ListCuti> {
                                 Text('End Date',
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 16)),
-                                SizedBox(width: 31),
+                                SizedBox(width: 56),
                                 Text(':',
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 16)),
@@ -138,7 +138,7 @@ class _ListCutiState extends State<ListCuti> {
                                 Text('Available Leave',
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 16)),
-                                SizedBox(width: 20),
+                                SizedBox(width: 6),
                                 Text(':',
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 16)),
@@ -156,7 +156,7 @@ class _ListCutiState extends State<ListCuti> {
                                 Text('Description',
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 16)),
-                                SizedBox(width: 12),
+                                SizedBox(width: 37),
                                 Text(':',
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 16)),
