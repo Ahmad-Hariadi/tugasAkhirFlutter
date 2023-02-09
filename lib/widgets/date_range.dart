@@ -11,11 +11,20 @@ class DateRange extends StatefulWidget {
   State<DateRange> createState() => _DateRangeState();
 }
 
+FirebaseFirestore users = FirebaseFirestore.instance;
+
 class _DateRangeState extends State<DateRange> {
   DateTimeRange dateRange = DateTimeRange(
     start: DateTime.now(),
     end: DateTime.now(),
   );
+
+  Stream streamUser() async* {
+    yield* users
+        .collection('users')
+        .doc(FirebaseAuth.instance.currentUser!.uid)
+        .snapshots();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,108 +55,126 @@ class _DateRangeState extends State<DateRange> {
           ),
         ),
       ),
-      body: Container(
-        padding: EdgeInsets.all(16),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Text(
-              'Select Leave Date',
-              style: TextStyle(fontSize: 32, color: Colors.white),
-            ),
-            const SizedBox(
-              height: 16,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Expanded(
-                  child: ElevatedButton(
-                    child: Text(DateFormat('yyy/MM/dd').format(tanggalawal)),
-                    onPressed: pickDateRange,
-                  ),
+      body: StreamBuilder(
+          stream: streamUser(),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return const Center(
+                child: CircularProgressIndicator(),
+              );
+            }
+            if (snapshot.hasData) {
+              var usersData = snapshot.data!.data();
+              return Container(
+                padding: EdgeInsets.all(16),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Select Leave Date',
+                      style: TextStyle(fontSize: 32, color: Colors.white),
+                    ),
+                    const SizedBox(
+                      height: 16,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Expanded(
+                          child: ElevatedButton(
+                            child: Text(
+                                DateFormat('yyy/MM/dd').format(tanggalawal)),
+                            onPressed: pickDateRange,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 16,
+                    ),
+                    Text(
+                      'Selected leave date: ${difference.inDays + 1} days',
+                      style: TextStyle(fontSize: 20, color: Colors.white),
+                    ),
+                    const SizedBox(
+                      height: 16,
+                    ),
+                    Text(
+                      'Total leave of ${usersData["maxCuti"].toString()} days',
+                      style: TextStyle(fontSize: 20, color: Colors.white),
+                    ),
+                    SizedBox(
+                      height: 40,
+                    ),
+                    TextFormField(
+                      controller: dateform,
+                      decoration: InputDecoration(
+                          enabled: true,
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20)),
+                          hintText:
+                              DateFormat('yyyy/MM/dd').format(tanggalawal),
+                          filled: true,
+                          fillColor: Colors.white),
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    TextFormField(
+                      controller: dateto,
+                      decoration: InputDecoration(
+                          enabled: true,
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20)),
+                          hintText:
+                              DateFormat('yyyy/MM/dd').format(tanggalakhir),
+                          filled: true,
+                          fillColor: Colors.white),
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    TextFormField(
+                      controller: keterangan,
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20)),
+                          hintText: 'Description',
+                          filled: true,
+                          fillColor: Colors.white),
+                    ),
+                    SizedBox(
+                      height: 25,
+                    ),
+                    ElevatedButton(
+                        onPressed: () async {
+                          CollectionReference addData =
+                              FirebaseFirestore.instance.collection('users');
+                          await addData.doc(user!.uid).update({
+                            "tanggalawal": tanggalawal.toString(),
+                            "tanggalakhir": tanggalakhir.toString(),
+                            "keterangan": keterangan.text,
+                            "maxCuti": usersData["maxCuti"],
+                            "status": "Pending"
+                          });
+                          Navigator.push(context, MaterialPageRoute(
+                            builder: (context) {
+                              return InfoCuti();
+                              // InfoCuti();
+                            },
+                          ));
+                        },
+                        child: const Text("Submit")),
+                    SizedBox(
+                      height: 20,
+                    ),
+                  ],
                 ),
-              ],
-            ),
-            const SizedBox(
-              height: 16,
-            ),
-            Text(
-              'Selected leave date: ${difference.inDays + 1} days',
-              style: TextStyle(fontSize: 20, color: Colors.white),
-            ),
-            const SizedBox(
-              height: 16,
-            ),
-            Text(
-              'Total leave of 12 days',
-              style: TextStyle(fontSize: 20, color: Colors.white),
-            ),
-            SizedBox(
-              height: 40,
-            ),
-            TextFormField(
-              controller: dateform,
-              decoration: InputDecoration(
-                  enabled: true,
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20)),
-                  hintText: DateFormat('yyyy/MM/dd').format(tanggalawal),
-                  filled: true,
-                  fillColor: Colors.white),
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            TextFormField(
-              controller: dateto,
-              decoration: InputDecoration(
-                  enabled: true,
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20)),
-                  hintText: DateFormat('yyyy/MM/dd').format(tanggalakhir),
-                  filled: true,
-                  fillColor: Colors.white),
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            TextFormField(
-              controller: keterangan,
-              decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20)),
-                  hintText: 'Description',
-                  filled: true,
-                  fillColor: Colors.white),
-            ),
-            SizedBox(
-              height: 25,
-            ),
-            ElevatedButton(
-                onPressed: () async {
-                  CollectionReference addData =
-                      FirebaseFirestore.instance.collection('users');
-                  await addData.doc(user!.uid).update({
-                    "tanggalawal": tanggalawal.toString(),
-                    "tanggalakhir": tanggalakhir.toString(),
-                    "keterangan": keterangan.text,
-                    "status": "Pending"
-                  });
-                  Navigator.push(context, MaterialPageRoute(
-                    builder: (context) {
-                      return InfoCuti();
-                      // InfoCuti();
-                    },
-                  ));
-                },
-                child: const Text("Submit")),
-            SizedBox(
-              height: 20,
-            ),
-          ],
-        ),
-      ),
+              );
+            } else {
+              return SizedBox();
+            }
+          }),
     );
   }
 

@@ -127,14 +127,14 @@ class _HomePageState extends State<HomePage> {
                                 ),
                                 SizedBox(width: 15),
                                 Text(
-                                  'Current Total Leave : ',
+                                  'Available Leave : ',
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold,
                                       fontSize: 15),
                                 ),
                                 Text(
-                                  '12',
+                                  '${data['maxCuti'].toString()} days',
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold,

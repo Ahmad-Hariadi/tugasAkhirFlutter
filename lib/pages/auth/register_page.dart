@@ -440,6 +440,7 @@ class _RegisterPageState extends State<RegisterPage> {
       'tanggalakhir': DateTime.now(),
       'keterangan': (""),
       'status': role == "HRD" ? "" : ("Pending"),
+      'maxCuti': 12
     });
     Navigator.pushReplacement(
         context, MaterialPageRoute(builder: (context) => LoginPage()));

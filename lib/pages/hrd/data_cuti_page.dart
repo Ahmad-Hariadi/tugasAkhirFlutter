@@ -129,6 +129,24 @@ class _DataCutiPageState extends State<DataCutiPage> {
                             ),
                             Row(
                               children: [
+                                Text('Available Leave',
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 16)),
+                                SizedBox(width: 20),
+                                Text(':',
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 16)),
+                                SizedBox(width: 10),
+                                Text('${data['maxCuti'].toString()} days',
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 16))
+                              ],
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Row(
+                              children: [
                                 Text('Description',
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 16)),
