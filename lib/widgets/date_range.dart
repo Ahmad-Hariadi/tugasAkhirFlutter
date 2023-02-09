@@ -161,7 +161,7 @@ class _DateRangeState extends State<DateRange> {
     if (newDateRange == null) {
       return;
     } else {
-      if (newDateRange.duration.inDays > 11) {
+      if (newDateRange.duration.inDays >= 12) {
         return showDialog<void>(
           context: context,
           builder: (BuildContext context) {
